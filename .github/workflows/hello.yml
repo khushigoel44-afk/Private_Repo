@@ -3,10 +3,13 @@ name: Workflow
 
 # When this workflow will run! 
 # In this case: as soon as the something is pushed, the workflow will run.
-# workflow-dispatch: manual click is needed to start the workflow
+# workflow_dispatch: manual click is needed to start the workflow
 on:
     push:
         branches: [main]
+
+    paths:
+        - '**.html'
 
 # Contains the various jobs present within the workflow.
 jobs:
