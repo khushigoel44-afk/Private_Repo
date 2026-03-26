@@ -8,8 +8,9 @@ on:
     push:
         branches: [main]
 
-    paths:
-        - '**.html'
+        paths:
+            - '**.html'
+            - '**.yml'
 
 # Contains the various jobs present within the workflow.
 jobs:
