@@ -16,6 +16,7 @@ jobs:
 
     # Job 2: The code is run by docker 
     build:
+        needs: [code]
         runs-on: ubuntu-latest
         steps:
             - name: Docker run
@@ -23,6 +24,7 @@ jobs:
 
     # Job 3: The code is executed by using exec.
     test:
+        needs: [build,code]
         runs-on: ubuntu-latest
         steps:
             - name: Test the code
@@ -30,6 +32,7 @@ jobs:
 
     # Job 4: The code is deployed
     deploy:
+        needs: [build,code,test]
         runs-on: ubuntu-latest
         steps:
             - name: Deploy the code
