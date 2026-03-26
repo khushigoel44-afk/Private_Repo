@@ -13,3 +13,12 @@ jobs:
 
             - name: Hello User
               run: echo "Hello $USER"
+
+    details:
+        runs-on: ubuntu-latest
+            steps:
+                - name: Check if docker is installed or not
+                  run: docker --version  
+
+                - name: check if python is installed or not
+                  run: python --version
