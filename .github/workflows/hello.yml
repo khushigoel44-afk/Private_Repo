@@ -16,9 +16,9 @@ jobs:
 
     details:
         runs-on: ubuntu-latest
-            steps:
-                - name: Check if docker is installed or not
-                  run: docker --version  
+        steps:
+            - name: Check if docker is installed or not
+              run: docker --version  
 
-                - name: check if python is installed or not
-                  run: python --version
+            - name: check if python is installed or not
+              run: python --version
