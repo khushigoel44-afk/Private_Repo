@@ -1,0 +1,36 @@
+# Name of the workflow that will be displayed in the actions tab
+name: cicd
+
+# Will have to click manually for the workflow to run 
+on: 
+    workflow_dispatch:
+
+# The list of jobs present within the workflow!
+jobs:
+    # Job 1: The code is pushed to github
+    code:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Push the code 
+              run: echo "The code is pushed to github"
+
+    # Job 2: The code is run by docker 
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Docker run
+              run: echo "Docker run"
+
+    # Job 3: The code is executed by using exec.
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Test the code
+              run: echo "Test the code"
+
+    # Job 4: The code is deployed
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy the code
+              run: echo "Deploy the code"
