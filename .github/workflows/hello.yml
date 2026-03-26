@@ -1,12 +1,20 @@
+# Name of the workflow that will be displayed in the action tab!
 name: Workflow
 
+# When this workflow will run! 
+# In this case: as soon as the something is pushed, the workflow will run.
+# workflow-dispatch: manual click is needed to start the workflow
 on:
     push:
         branches: [main]
 
+# Contains the various jobs present within the workflow.
 jobs:
+    # Job 1: displays the hello msg.
     greet:
+        # Github runner for the job 1
         runs-on: ubuntu-latest
+        # Steps involved in the job 1.
         steps:
             - name: Hello Friends
               run: echo "Hey There!"
@@ -14,8 +22,11 @@ jobs:
             - name: Hello User
               run: echo "Hello $USER"
 
+    # Job 2: displays whether docker and python are installed or not
     details:
+        # github runner for job 2
         runs-on: ubuntu-latest
+        # Steps involved in the job 2.
         steps:
             - name: Check if docker is installed or not
               run: docker --version  
