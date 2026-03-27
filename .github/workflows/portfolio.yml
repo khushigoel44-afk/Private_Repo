@@ -27,7 +27,7 @@ jobs:
 
             # Make static files
             - name: upload static files
-              uses: actions/upload-pages-artifacts@v4
+              uses: actions/upload-pages-artifact@v4
 
              # Make page live
             - name: deploy the code
