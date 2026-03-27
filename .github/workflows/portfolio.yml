@@ -1,0 +1,29 @@
+name: My_Portfolio
+
+on: 
+    push:
+        branches: [main]
+
+environmrnt:
+    name: github_portfolio
+    url = ${{steps.deployment.output.pages_url }}
+
+job: 
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            # Get access to the portfolio code via build-in github actions.
+            - name: checkout code
+              uses: actions/checkout@v4
+
+            # setup github pages/
+            - name: setup github pages
+              uses: actions/configure-pages@v4
+
+            # Make static files
+            - name: upload static files
+              uses: actions/upload-pages-artifacts@v4
+
+             # Make page live
+            - name: deploy the code
+              uses: actions/deploy-pages@v4
