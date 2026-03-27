@@ -3,24 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Portfolio | Creative Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --accent: #00d4ff;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at top left, #1a1a2e, #16213e, #0f3460);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Blobs */
+        .blob {
+            position: fixed;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-20%, -20%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            letter-spacing: -2px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-weight: 300;
+            opacity: 0.8;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        .about-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5rem; }
+            .container { padding: 30px; }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1 style="text-align:center;">John Doe</h1>
-        <p style="text-align:center;">Web Developer</p>
-    </header>
-    <main>
-        <section id="about" style="border:1px solid black; padding:10px;">
-            <h2>About Me</h2>
-            <p>Passionate developer creating web solutions.</p>
-        </section>
-        <section id="projects" style="border:1px solid black; padding:10px; margin-top:10px;">
-            <h2>Projects</h2>
-            <ul>
-                <li>Project A: HTML structure example.</li>
-            </ul>
-        </section>
-    </main>
+    <div class="blob"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Creative Engineer</h1>
+            <p>UI / UX & Frontend Development</p>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>The Profile</h2>
+                <p class="about-text">
+                    Merging technical precision with aesthetic excellence. I build digital experiences 
+                    that are not only functional but emotionally resonant. Expert in crafting 
+                    high-performance, glass-morphed interfaces.
+                </p>
+            </section>
+
+            <section id="projects">
+                <h2>Selected Work</h2>
+                <div class="project-card">
+                    <h3>Project Alpha</h3>
+                    <p>A high-performance dashboard featuring real-time data visualization and deep glassmorphism integration.</p>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
