@@ -6,7 +6,7 @@ on:
 
 environmrnt:
     name: github_portfolio
-    url = ${{steps.deployment.output.pages_url }}
+    url: ${{steps.deployment.output.pages_url }}
 
 job: 
     deploy:
