@@ -4,13 +4,14 @@ on:
     push:
         branches: [main]
 
-environmrnt:
-    name: github_portfolio
-    url: ${{steps.deployment.output.pages_url }}
-
 job: 
     deploy:
         runs-on: ubuntu-latest
+
+        environmrnt:
+            name: github_portfolio
+            url: ${{steps.deployment.output.pages_url }}
+            
         steps:
             # Get access to the portfolio code via build-in github actions.
             - name: checkout code
