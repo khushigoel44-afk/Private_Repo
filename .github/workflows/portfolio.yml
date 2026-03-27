@@ -4,13 +4,17 @@ on:
     push:
         branches: [main]
 
+permissions:
+    pages: write
+    id-token: write
+
 jobs: 
     deploy:
         runs-on: ubuntu-latest
 
         environmrnt:
             name: github_portfolio
-            url: ${{steps.deployment.output.pages_url }}
+            url: ${{ steps.deployment.output.pages_url }}
             
         steps:
             # Get access to the portfolio code via build-in github actions.
