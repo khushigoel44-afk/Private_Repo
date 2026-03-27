@@ -12,9 +12,9 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
 
-        environmrnt:
+        environment:
             name: github_portfolio
-            url: ${{ steps.deployment.output.pages_url }}
+            url: ${{ steps.deployment.outputs.pages_url }}
             
         steps:
             # Get access to the portfolio code via build-in github actions.
