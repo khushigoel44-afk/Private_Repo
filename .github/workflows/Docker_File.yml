@@ -1,0 +1,29 @@
+name: Docker-build-push
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    variables:
+        runs-on: ubuntu-latest
+        steps:
+            - name: chackout code
+              uses: actions/chceckout@v4
+
+            - name: login to docker hub
+              uses: docker/login-action@v3
+              with:
+                  username: ${{vars.USERNAME_VALUE}}
+                  password: ${{secrets.PASSWORD_VALUE}}
+
+            - name: build and push to docker
+              uses: docker/build-push-actions@v6
+              with:
+                  push: true
+                  tags: |
+                      ${{vars.USERNAME_VALUE}}/github-actions-app:${{github.ref_name}}
+                      ${{vars.USERNAME_VALUE}}/github-actions-app:latest
+                      ${{vars.USERNAME_VALUE}}/github-actions-app:${{github.sha}}
+                      
+                      
