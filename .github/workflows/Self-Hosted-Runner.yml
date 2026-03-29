@@ -7,6 +7,8 @@ on:
 
 jobs:
     validate:
+        env:
+            DOCKER_USERNAME: ${{var.USERNAME_VALUE}}
         runs-on: self-hosted
         steps:
             - name: checkout code
