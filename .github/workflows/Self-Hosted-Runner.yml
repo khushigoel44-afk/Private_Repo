@@ -7,9 +7,6 @@ on:
 
 jobs:
     validate:
-        env:
-            DOCKER_USERNAME: ${{vars.USERNAME_VALUE}}
-            DOCKER_TAG: ${{github.sha}}
         runs-on: self-hosted
         steps:
             - name: checkout code
