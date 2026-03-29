@@ -1,0 +1,23 @@
+name: Python_Libraries
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    validate:
+        runs-on: ubuntu-latest
+        steps:
+            - name: chceckout code
+              uses: actions/checkout@v4
+
+        steps:
+            - name: python-version "3.12"
+              run: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+            - name: install libraries
+              run: pip install requirements.txt
+
+            - name: run linter
+              run: flake8 app.py
