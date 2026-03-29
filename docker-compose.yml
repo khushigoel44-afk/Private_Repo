@@ -1,0 +1,6 @@
+services:
+
+web:
+    image: ${{ var.USERNAME_VALUE }}/github-actions-app:latest
+    ports:
+    - "80:80"
