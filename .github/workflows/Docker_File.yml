@@ -7,6 +7,8 @@ on:
 
 jobs:
     variables:
+        env:
+            DOCKER_TAG: ${{github.sha}}
         runs-on: ubuntu-latest
         steps:
             - name: chackout code
